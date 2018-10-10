@@ -166,10 +166,10 @@
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="Value of extension" />
+      <short value="The reason the observation was added, performed or given." />
       <definition value="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list)." />
       <comment value="A stream of bytes, base64 encoded" />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Extension.value[x]" />
@@ -208,6 +208,8 @@
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
+      <short value="The reason the observation was added, performed or given." />
+      <min value="1" />
       <type>
         <code value="CodeableConcept" />
       </type>
