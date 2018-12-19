@@ -1,7 +1,6 @@
-# CareConnect-profiles-STU3
-HL7 UK FHIR STU3 profiles
+# CareConnect-profiles
 
-A library of profiles (resources and interaction patterns) of the HL7® FHIR® standard (version STU3) that implementers can adopt to simplify integration and interoperability within UK Health and Social Care.
+A library of profiles (resources and interaction patterns) of the HL7® FHIR® standard that implementers can adopt to simplify integration and interoperability within UK Health and Social Care.
 
 The process for managing this library is described at:
 

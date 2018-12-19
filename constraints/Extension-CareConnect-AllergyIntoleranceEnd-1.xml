@@ -1,29 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-08-25T14:33:42.227+01:00" />
+    <lastUpdated value="2018-02-28T10:50:43.98+00:00" />
   </meta>
-  <url value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ConditionRelationship-1" />
-  <version value="0.0.1" />
-  <name value="Extension-CareConnect-ConditionRelationship-1" />
+  <url value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AllergyIntoleranceEnd-1" />
+  <version value="1.1.0" />
+  <name value="Extension-CareConnect-AllergyIntoleranceEnd-1" />
   <status value="draft" />
-  <date value="2017-07-11T14:06:59.8215264+01:00" />
+  <date value="2018-11-05" />
   <publisher value="HL7 UK" />
-  <description value="A reference to another related condition (target) whose relationship is defined by the relationship type code." />
+  <contact>
+    <name value="INTEROPen" />
+    <telecom>
+      <system value="email" />
+      <value value="admin@interopen.org" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="Supports the date and reason that the allergy was no longer valid." />
+  <purpose value="CURATED BY INTEROPen see: http://www.interopen.org/careconnect-curation-methodology/" />
   <copyright value="Copyright © 2016 HL7 UK&#xD;&#xA;&#xD;&#xA;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at&#xD;&#xA;&#xD;&#xA;http://www.apache.org/licenses/LICENSE-2.0&#xD;&#xA;&#xD;&#xA;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&#xD;&#xA;&#xD;&#xA;HL7® FHIR® standard Copyright © 2011+ HL7&#xD;&#xA;&#xD;&#xA;The HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at&#xD;&#xA;&#xD;&#xA;https://www.hl7.org/fhir/license.html" />
   <fhirVersion value="3.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <contextType value="resource" />
-  <context value="Condition" />
+  <context value="AllergyIntolerance" />
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <snapshot>
     <element id="Extension">
       <path value="Extension" />
-      <short value="Related condition" />
-      <definition value="Related condition." />
+      <short value="Supports the date and reason that the allergy was no longer valid" />
+      <definition value="Supports the date and reason that the allergy was no longer valid." />
       <min value="0" />
       <max value="*" />
       <base>
@@ -133,15 +142,15 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:type">
+    <element id="Extension.extension:endDate">
       <path value="Extension.extension" />
-      <sliceName value="type" />
-      <short value="Additional Content defined by implementations" />
+      <sliceName value="endDate" />
+      <short value="The date the allergy or intolerance was recorded as no longer valid." />
       <definition value="May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
       <alias value="extensions" />
       <alias value="user content" />
-      <min value="1" />
+      <min value="0" />
       <max value="1" />
       <base>
         <path value="Element.extension" />
@@ -175,7 +184,7 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:type.id">
+    <element id="Extension.extension:endDate.id">
       <path value="Extension.extension.id" />
       <representation value="xmlAttr" />
       <short value="xml:id (or equivalent in JSON)" />
@@ -204,7 +213,7 @@
         <map value="n/a" />
       </mapping>
     </element>
-    <element id="Extension.extension:type.extension">
+    <element id="Extension.extension:endDate.extension">
       <path value="Extension.extension.extension" />
       <slicing>
         <discriminator>
@@ -253,7 +262,7 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:type.url">
+    <element id="Extension.extension:endDate.url">
       <path value="Extension.extension.url" />
       <representation value="xmlAttr" />
       <short value="identifies the meaning of the extension" />
@@ -269,7 +278,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="type" />
+      <fixedUri value="endDate" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -287,11 +296,11 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:type.value[x]:valueCode">
-      <path value="Extension.extension.valueCode" />
-      <sliceName value="valueCode" />
-      <short value="Condition relationship type" />
-      <definition value="Condition relationship type." />
+    <element id="Extension.extension:endDate.valueDateTime:valueDateTime">
+      <path value="Extension.extension.valueDateTime" />
+      <sliceName value="valueDateTime" />
+      <short value="The date the allergy was recorded as no longer valid" />
+      <definition value="The date the allergy was recorded as no longer valid." />
       <comment value="A stream of bytes, base64 encoded" />
       <min value="0" />
       <max value="1" />
@@ -301,7 +310,7 @@
         <max value="1" />
       </base>
       <type>
-        <code value="code" />
+        <code value="dateTime" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -311,13 +320,6 @@
         <expression value="hasValue() | (children().count() &gt; id.count())" />
         <xpath value="@value|f:*|h:div" />
       </constraint>
-      <binding>
-        <strength value="required" />
-        <description value="A set of codes specifying the kind of relationship that exists with a target condition." />
-        <valueSetReference>
-          <reference value="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ConditionRelationship-1" />
-        </valueSetReference>
-      </binding>
       <mapping>
         <identity value="rim" />
         <map value="n/a" />
@@ -327,15 +329,15 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:target">
+    <element id="Extension.extension:reasonEnded">
       <path value="Extension.extension" />
-      <sliceName value="target" />
-      <short value="Additional Content defined by implementations" />
+      <sliceName value="reasonEnded" />
+      <short value="The reason why the allergy or intolerance has been resolved." />
       <definition value="May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
       <alias value="extensions" />
       <alias value="user content" />
-      <min value="1" />
+      <min value="0" />
       <max value="1" />
       <base>
         <path value="Element.extension" />
@@ -369,7 +371,7 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:target.id">
+    <element id="Extension.extension:reasonEnded.id">
       <path value="Extension.extension.id" />
       <representation value="xmlAttr" />
       <short value="xml:id (or equivalent in JSON)" />
@@ -398,7 +400,7 @@
         <map value="n/a" />
       </mapping>
     </element>
-    <element id="Extension.extension:target.extension">
+    <element id="Extension.extension:reasonEnded.extension">
       <path value="Extension.extension.extension" />
       <slicing>
         <discriminator>
@@ -447,7 +449,7 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:target.url">
+    <element id="Extension.extension:reasonEnded.url">
       <path value="Extension.extension.url" />
       <representation value="xmlAttr" />
       <short value="identifies the meaning of the extension" />
@@ -463,7 +465,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="target" />
+      <fixedUri value="reasonEnded" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -481,11 +483,11 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:target.value[x]:valueReference">
-      <path value="Extension.extension.valueReference" />
-      <sliceName value="valueReference" />
-      <short value="Target condition" />
-      <definition value="Target condition." />
+    <element id="Extension.extension:reasonEnded.valueString:valueString">
+      <path value="Extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <short value="The reason why the allergy or intolerance has been resolved" />
+      <definition value="The reason why the allergy or intolerance has been resolved." />
       <comment value="A stream of bytes, base64 encoded" />
       <min value="0" />
       <max value="1" />
@@ -495,8 +497,7 @@
         <max value="1" />
       </base>
       <type>
-        <code value="Reference" />
-        <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Condition-1" />
+        <code value="string" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -531,7 +532,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ConditionRelationship-1" />
+      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AllergyIntoleranceEnd-1" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -672,9 +673,6 @@
       <type>
         <code value="Timing" />
       </type>
-      <type>
-        <code value="Meta" />
-      </type>
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -696,10 +694,10 @@
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <short value="Related condition" />
-      <definition value="Related condition." />
+      <short value="Supports the date and reason that the allergy was no longer valid" />
+      <definition value="Supports the date and reason that the allergy was no longer valid." />
     </element>
-    <element>
+    <element id="Extension.extension">
       <path value="Extension.extension" />
       <slicing>
         <discriminator>
@@ -709,59 +707,162 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Extension.extension:type">
+    <element id="Extension.extension:endDate">
       <path value="Extension.extension" />
-      <sliceName value="type" />
-      <min value="1" />
+      <sliceName value="endDate" />
+      <short value="The date the allergy or intolerance was recorded as no longer valid." />
       <max value="1" />
     </element>
-    <element id="Extension.extension:type.url">
+    <element id="Extension.extension:endDate.url">
       <path value="Extension.extension.url" />
-      <fixedUri value="type" />
+      <fixedUri value="endDate" />
     </element>
-    <element id="Extension.extension:type.value[x]:valueCode">
-      <path value="Extension.extension.valueCode" />
-      <sliceName value="valueCode" />
-      <short value="Condition relationship type" />
-      <definition value="Condition relationship type." />
+    <element id="Extension.extension:endDate.valueDateTime:valueDateTime">
+      <path value="Extension.extension.valueDateTime" />
+      <sliceName value="valueDateTime" />
+      <short value="The date the allergy was recorded as no longer valid" />
+      <definition value="The date the allergy was recorded as no longer valid." />
       <type>
-        <code value="code" />
+        <code value="dateTime" />
       </type>
-      <binding>
-        <strength value="required" />
-        <description value="A set of codes specifying the kind of relationship that exists with a target condition." />
-        <valueSetReference>
-          <reference value="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ConditionRelationship-1" />
-        </valueSetReference>
-      </binding>
     </element>
-    <element id="Extension.extension:target">
+    <element id="Extension.extension:reasonEnded">
       <path value="Extension.extension" />
-      <sliceName value="target" />
-      <min value="1" />
+      <sliceName value="reasonEnded" />
+      <short value="The reason why the allergy or intolerance has been resolved." />
       <max value="1" />
     </element>
-    <element id="Extension.extension:target.url">
+    <element id="Extension.extension:reasonEnded.url">
       <path value="Extension.extension.url" />
-      <fixedUri value="target" />
+      <fixedUri value="reasonEnded" />
     </element>
-    <element id="Extension.extension:target.value[x]:valueReference">
-      <path value="Extension.extension.valueReference" />
-      <sliceName value="valueReference" />
-      <short value="Target condition" />
-      <definition value="Target condition." />
+    <element id="Extension.extension:reasonEnded.valueString:valueString">
+      <path value="Extension.extension.valueString" />
+      <sliceName value="valueString" />
+      <short value="The reason why the allergy or intolerance has been resolved" />
+      <definition value="The reason why the allergy or intolerance has been resolved." />
       <type>
-        <code value="Reference" />
-        <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Condition-1" />
+        <code value="string" />
       </type>
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ConditionRelationship-1" />
+      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AllergyIntoleranceEnd-1" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
       <max value="0" />
+      <type>
+        <code value="base64Binary" />
+      </type>
+      <type>
+        <code value="boolean" />
+      </type>
+      <type>
+        <code value="code" />
+      </type>
+      <type>
+        <code value="date" />
+      </type>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <type>
+        <code value="decimal" />
+      </type>
+      <type>
+        <code value="id" />
+      </type>
+      <type>
+        <code value="instant" />
+      </type>
+      <type>
+        <code value="integer" />
+      </type>
+      <type>
+        <code value="markdown" />
+      </type>
+      <type>
+        <code value="oid" />
+      </type>
+      <type>
+        <code value="positiveInt" />
+      </type>
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="time" />
+      </type>
+      <type>
+        <code value="unsignedInt" />
+      </type>
+      <type>
+        <code value="uri" />
+      </type>
+      <type>
+        <code value="Address" />
+      </type>
+      <type>
+        <code value="Age" />
+      </type>
+      <type>
+        <code value="Annotation" />
+      </type>
+      <type>
+        <code value="Attachment" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <type>
+        <code value="Coding" />
+      </type>
+      <type>
+        <code value="ContactPoint" />
+      </type>
+      <type>
+        <code value="Count" />
+      </type>
+      <type>
+        <code value="Distance" />
+      </type>
+      <type>
+        <code value="Duration" />
+      </type>
+      <type>
+        <code value="HumanName" />
+      </type>
+      <type>
+        <code value="Identifier" />
+      </type>
+      <type>
+        <code value="Money" />
+      </type>
+      <type>
+        <code value="Period" />
+      </type>
+      <type>
+        <code value="Quantity" />
+      </type>
+      <type>
+        <code value="Range" />
+      </type>
+      <type>
+        <code value="Ratio" />
+      </type>
+      <type>
+        <code value="Reference" />
+      </type>
+      <type>
+        <code value="SampledData" />
+      </type>
+      <type>
+        <code value="Signature" />
+      </type>
+      <type>
+        <code value="Timing" />
+      </type>
     </element>
   </differential>
 </StructureDefinition>
