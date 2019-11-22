@@ -1,31 +1,40 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-08-25T14:33:42.227+01:00" />
+    <lastUpdated value="2018-03-06T09:11:13.51+00:00" />
   </meta>
-  <url value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ConditionRelationship-1" />
-  <version value="0.0.1" />
-  <name value="Extension-CareConnect-ConditionRelationship-1" />
+  <url value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1" />
+  <version value="1.2.0" />
+  <name value="Extension-CareConnect-MedicationRepeatInformation-1" />
   <status value="draft" />
-  <date value="2017-07-11T14:06:59.8215264+01:00" />
+  <date value="2019-11-22" />
   <publisher value="HL7 UK" />
-  <description value="A reference to another related condition (target) whose relationship is defined by the relationship type code." />
-  <copyright value="Copyright © 2016 HL7 UK&#xD;&#xA;&#xD;&#xA;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at&#xD;&#xA;&#xD;&#xA;http://www.apache.org/licenses/LICENSE-2.0&#xD;&#xA;&#xD;&#xA;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&#xD;&#xA;&#xD;&#xA;HL7® FHIR® standard Copyright © 2011+ HL7&#xD;&#xA;&#xD;&#xA;The HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at&#xD;&#xA;&#xD;&#xA;https://www.hl7.org/fhir/license.html" />
+  <contact>
+    <name value="INTEROPen" />
+    <telecom>
+      <system value="email" />
+      <value value="admin@interopen.org" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="Indicates the specific repeat information of a medication item." />
+  <purpose value="CURATED BY INTEROPen see: http://www.interopen.org/careconnect-curation-methodology/" />
+  <copyright value="Copyright © 2019 HL7 UK&#xD;&#xA;&#xD;&#xA;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at&#xD;&#xA;&#xD;&#xA;http://www.apache.org/licenses/LICENSE-2.0&#xD;&#xA;&#xD;&#xA;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&#xD;&#xA;&#xD;&#xA;HL7® FHIR® standard Copyright © 2011+ HL7&#xD;&#xA;&#xD;&#xA;The HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at&#xD;&#xA;&#xD;&#xA;https://www.hl7.org/fhir/license.html" />
   <fhirVersion value="3.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <contextType value="resource" />
-  <context value="Condition" />
+  <context value="MedicationRequest" />
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <snapshot>
     <element id="Extension">
       <path value="Extension" />
-      <short value="Related condition" />
-      <definition value="Related condition." />
+      <short value="Medication repeat information" />
+      <definition value="Medication repeat information." />
       <min value="0" />
-      <max value="*" />
+      <max value="1" />
       <base>
         <path value="Element" />
         <min value="0" />
@@ -133,15 +142,15 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:type">
+    <element id="Extension.extension:numberOfRepeatPrescriptionsAllowed">
       <path value="Extension.extension" />
-      <sliceName value="type" />
-      <short value="Additional Content defined by implementations" />
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <sliceName value="numberOfRepeatPrescriptionsAllowed" />
+      <short value="Number of repeat prescriptions authorised" />
+      <definition value="Number of repeat prescriptions authorised." />
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
       <alias value="extensions" />
       <alias value="user content" />
-      <min value="1" />
+      <min value="0" />
       <max value="1" />
       <base>
         <path value="Element.extension" />
@@ -175,7 +184,7 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:type.id">
+    <element id="Extension.extension:numberOfRepeatPrescriptionsAllowed.id">
       <path value="Extension.extension.id" />
       <representation value="xmlAttr" />
       <short value="xml:id (or equivalent in JSON)" />
@@ -204,7 +213,7 @@
         <map value="n/a" />
       </mapping>
     </element>
-    <element id="Extension.extension:type.extension">
+    <element id="Extension.extension:numberOfRepeatPrescriptionsAllowed.extension">
       <path value="Extension.extension.extension" />
       <slicing>
         <discriminator>
@@ -253,7 +262,7 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:type.url">
+    <element id="Extension.extension:numberOfRepeatPrescriptionsAllowed.url">
       <path value="Extension.extension.url" />
       <representation value="xmlAttr" />
       <short value="identifies the meaning of the extension" />
@@ -269,7 +278,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="type" />
+      <fixedUri value="numberOfRepeatPrescriptionsAllowed" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -287,13 +296,13 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:type.value[x]:valueCode">
-      <path value="Extension.extension.valueCode" />
-      <sliceName value="valueCode" />
-      <short value="Condition relationship type" />
-      <definition value="Condition relationship type." />
+    <element id="Extension.extension:numberOfRepeatPrescriptionsAllowed.valueUnsignedInt:valueUnsignedInt">
+      <path value="Extension.extension.valueUnsignedInt" />
+      <sliceName value="valueUnsignedInt" />
+      <short value="Number of issues authorised" />
+      <definition value="Number of issues authorised." />
       <comment value="A stream of bytes, base64 encoded" />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Extension.value[x]" />
@@ -301,7 +310,7 @@
         <max value="1" />
       </base>
       <type>
-        <code value="code" />
+        <code value="unsignedInt" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -311,13 +320,6 @@
         <expression value="hasValue() | (children().count() &gt; id.count())" />
         <xpath value="@value|f:*|h:div" />
       </constraint>
-      <binding>
-        <strength value="required" />
-        <description value="A set of codes specifying the kind of relationship that exists with a target condition." />
-        <valueSetReference>
-          <reference value="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ConditionRelationship-1" />
-        </valueSetReference>
-      </binding>
       <mapping>
         <identity value="rim" />
         <map value="n/a" />
@@ -327,15 +329,15 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:target">
+    <element id="Extension.extension:numberOfRepeatPrescriptionsIssued">
       <path value="Extension.extension" />
-      <sliceName value="target" />
-      <short value="Additional Content defined by implementations" />
-      <definition value="May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <sliceName value="numberOfRepeatPrescriptionsIssued" />
+      <short value="Number of repeat prescriptions issued" />
+      <definition value="Number of repeat prescriptions issued." />
       <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
       <alias value="extensions" />
       <alias value="user content" />
-      <min value="1" />
+      <min value="0" />
       <max value="1" />
       <base>
         <path value="Element.extension" />
@@ -369,7 +371,7 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:target.id">
+    <element id="Extension.extension:numberOfRepeatPrescriptionsIssued.id">
       <path value="Extension.extension.id" />
       <representation value="xmlAttr" />
       <short value="xml:id (or equivalent in JSON)" />
@@ -398,7 +400,7 @@
         <map value="n/a" />
       </mapping>
     </element>
-    <element id="Extension.extension:target.extension">
+    <element id="Extension.extension:numberOfRepeatPrescriptionsIssued.extension">
       <path value="Extension.extension.extension" />
       <slicing>
         <discriminator>
@@ -447,7 +449,7 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:target.url">
+    <element id="Extension.extension:numberOfRepeatPrescriptionsIssued.url">
       <path value="Extension.extension.url" />
       <representation value="xmlAttr" />
       <short value="identifies the meaning of the extension" />
@@ -463,7 +465,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="target" />
+      <fixedUri value="numberOfRepeatPrescriptionsIssued" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -481,11 +483,11 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.extension:target.value[x]:valueReference">
-      <path value="Extension.extension.valueReference" />
-      <sliceName value="valueReference" />
-      <short value="Target condition" />
-      <definition value="Target condition." />
+    <element id="Extension.extension:numberOfRepeatPrescriptionsIssued.valueUnsignedInt:valueUnsignedInt">
+      <path value="Extension.extension.valueUnsignedInt" />
+      <sliceName value="valueUnsignedInt" />
+      <short value="Number of issues issued" />
+      <definition value="Number of issues issued." />
       <comment value="A stream of bytes, base64 encoded" />
       <min value="0" />
       <max value="1" />
@@ -495,8 +497,194 @@
         <max value="1" />
       </base>
       <type>
-        <code value="Reference" />
-        <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Condition-1" />
+        <code value="unsignedInt" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() | (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element id="Extension.extension:authorisationExpiryDate">
+      <path value="Extension.extension" />
+      <sliceName value="authorisationExpiryDate" />
+      <short value="Repeat prescription review date" />
+      <definition value="Repeat prescription review date." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Element.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() | (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element id="Extension.extension:authorisationExpiryDate.id">
+      <path value="Extension.extension.id" />
+      <representation value="xmlAttr" />
+      <short value="xml:id (or equivalent in JSON)" />
+      <definition value="unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." />
+      <comment value="Note that FHIR strings may not exceed 1MB in size" />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Element.id" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="string" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() | (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="Extension.extension:authorisationExpiryDate.extension">
+      <path value="Extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url" />
+        <rules value="open" />
+      </slicing>
+      <short value="Additional Content defined by implementations" />
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." />
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Element.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() | (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element id="Extension.extension:authorisationExpiryDate.url">
+      <path value="Extension.extension.url" />
+      <representation value="xmlAttr" />
+      <short value="identifies the meaning of the extension" />
+      <definition value="Source of the definition for the extension code - a logical name or a URL." />
+      <comment value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension." />
+      <min value="1" />
+      <max value="1" />
+      <base>
+        <path value="Extension.url" />
+        <min value="1" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="uri" />
+      </type>
+      <fixedUri value="authorisationExpiryDate" />
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() | (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
+    <element id="Extension.extension:authorisationExpiryDate.valueDateTime:valueDateTime">
+      <path value="Extension.extension.valueDateTime" />
+      <sliceName value="valueDateTime" />
+      <short value="Repeat review date" />
+      <definition value="Repeat review date." />
+      <comment value="A stream of bytes, base64 encoded" />
+      <min value="0" />
+      <max value="1" />
+      <base>
+        <path value="Extension.value[x]" />
+        <min value="0" />
+        <max value="1" />
+      </base>
+      <type>
+        <code value="dateTime" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -531,7 +719,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ConditionRelationship-1" />
+      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -696,10 +884,11 @@
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <short value="Related condition" />
-      <definition value="Related condition." />
+      <short value="Medication repeat information" />
+      <definition value="Medication repeat information." />
+      <max value="1" />
     </element>
-    <element>
+    <element id="Extension.extension">
       <path value="Extension.extension" />
       <slicing>
         <discriminator>
@@ -709,55 +898,70 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Extension.extension:type">
+    <element id="Extension.extension:numberOfRepeatPrescriptionsAllowed">
       <path value="Extension.extension" />
-      <sliceName value="type" />
-      <min value="1" />
+      <sliceName value="numberOfRepeatPrescriptionsAllowed" />
+      <short value="Number of repeat prescriptions authorised" />
+      <definition value="Number of repeat prescriptions authorised." />
       <max value="1" />
     </element>
-    <element id="Extension.extension:type.url">
+    <element id="Extension.extension:numberOfRepeatPrescriptionsAllowed.url">
       <path value="Extension.extension.url" />
-      <fixedUri value="type" />
+      <fixedUri value="numberOfRepeatPrescriptionsAllowed" />
     </element>
-    <element id="Extension.extension:type.value[x]:valueCode">
-      <path value="Extension.extension.valueCode" />
-      <sliceName value="valueCode" />
-      <short value="Condition relationship type" />
-      <definition value="Condition relationship type." />
+    <element id="Extension.extension:numberOfRepeatPrescriptionsAllowed.valueUnsignedInt:valueUnsignedInt">
+      <path value="Extension.extension.valueUnsignedInt" />
+      <sliceName value="valueUnsignedInt" />
+      <short value="Number of issues authorised" />
+      <definition value="Number of issues authorised." />
+      <min value="1" />
       <type>
-        <code value="code" />
+        <code value="unsignedInt" />
       </type>
-      <binding>
-        <strength value="required" />
-        <description value="A set of codes specifying the kind of relationship that exists with a target condition." />
-        <valueSetReference>
-          <reference value="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ConditionRelationship-1" />
-        </valueSetReference>
-      </binding>
     </element>
-    <element id="Extension.extension:target">
+    <element id="Extension.extension:numberOfRepeatPrescriptionsIssued">
       <path value="Extension.extension" />
-      <sliceName value="target" />
-      <min value="1" />
+      <sliceName value="numberOfRepeatPrescriptionsIssued" />
+      <short value="Number of repeat prescriptions issued" />
+      <definition value="Number of repeat prescriptions issued." />
       <max value="1" />
     </element>
-    <element id="Extension.extension:target.url">
+    <element id="Extension.extension:numberOfRepeatPrescriptionsIssued.url">
       <path value="Extension.extension.url" />
-      <fixedUri value="target" />
+      <fixedUri value="numberOfRepeatPrescriptionsIssued" />
     </element>
-    <element id="Extension.extension:target.value[x]:valueReference">
-      <path value="Extension.extension.valueReference" />
-      <sliceName value="valueReference" />
-      <short value="Target condition" />
-      <definition value="Target condition." />
+    <element id="Extension.extension:numberOfRepeatPrescriptionsIssued.valueUnsignedInt:valueUnsignedInt">
+      <path value="Extension.extension.valueUnsignedInt" />
+      <sliceName value="valueUnsignedInt" />
+      <short value="Number of issues issued" />
+      <definition value="Number of issues issued." />
       <type>
-        <code value="Reference" />
-        <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Condition-1" />
+        <code value="unsignedInt" />
+      </type>
+    </element>
+    <element id="Extension.extension:authorisationExpiryDate">
+      <path value="Extension.extension" />
+      <sliceName value="authorisationExpiryDate" />
+      <short value="Repeat prescription review date" />
+      <definition value="Repeat prescription review date." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:authorisationExpiryDate.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="authorisationExpiryDate" />
+    </element>
+    <element id="Extension.extension:authorisationExpiryDate.valueDateTime:valueDateTime">
+      <path value="Extension.extension.valueDateTime" />
+      <sliceName value="valueDateTime" />
+      <short value="Repeat review date" />
+      <definition value="Repeat review date." />
+      <type>
+        <code value="dateTime" />
       </type>
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ConditionRelationship-1" />
+      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationRepeatInformation-1" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />

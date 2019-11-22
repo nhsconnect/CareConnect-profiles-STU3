@@ -1,29 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-07-12T16:25:32.45+01:00" />
+    <lastUpdated value="2018-04-18T14:16:35.428+01:00" />
   </meta>
-  <url value="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter" />
-  <version value="1.0.0" />
-  <name value="encounter-associatedEncounter" />
+  <url value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ParentPresent-1" />
+  <version value="1.1.0" />
+  <name value="Extension-CareConnect-ParentPresent-1" />
   <status value="draft" />
-  <date value="2017-07-12T16:22:26.0876966+01:00" />
-  <description value="This encounter occurs within the scope of the referenced encounter." />
-  <copyright value="Copyright © Health Level Seven, Inc. - FHIR WG" />
+  <date value="2018-11-05" />
+  <publisher value="HL7 UK" />
+  <contact>
+    <name value="INTEROPen" />
+    <telecom>
+      <system value="email" />
+      <value value="admin@interopen.org" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="This Extension resource is constrained to indicate whether a parent was present at the Immunization." />
+  <purpose value="CURATED BY INTEROPen see: http://www.interopen.org/careconnect-curation-methodology/ " />
+  <copyright value="Copyright © 2016 HL7 UK&#xD;&#xA;&#xD;&#xA;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at&#xD;&#xA;&#xD;&#xA;http://www.apache.org/licenses/LICENSE-2.0&#xD;&#xA;&#xD;&#xA;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&#xD;&#xA;&#xD;&#xA;HL7® FHIR® standard Copyright © 2011+ HL7&#xD;&#xA;&#xD;&#xA;The HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at&#xD;&#xA;&#xD;&#xA;https://www.hl7.org/fhir/license.html" />
   <fhirVersion value="3.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <contextType value="resource" />
-  <context value="FamilyMemberHistory" />
-  <context value="AllergyIntolerance" />
+  <context value="Immunization" />
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <snapshot>
     <element id="Extension">
       <path value="Extension" />
-      <short value="An associated encounter reference" />
-      <definition value="An associated encounter reference." />
+      <short value="Was a parent present at the Immunization" />
+      <definition value="Was a parent present at the Immunization." />
       <min value="0" />
       <max value="*" />
       <base>
@@ -149,7 +158,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter" />
+      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ParentPresent-1" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -167,13 +176,13 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.value[x]:valueReference">
-      <path value="Extension.valueReference" />
-      <sliceName value="valueReference" />
-      <short value="Value of extension" />
-      <definition value="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list)." />
+    <element id="Extension.valueBoolean:valueBoolean">
+      <path value="Extension.valueBoolean" />
+      <sliceName value="valueBoolean" />
+      <short value="Was a parent present at the Immunization" />
+      <definition value="Was a parent present at the Immunization." />
       <comment value="A stream of bytes, base64 encoded" />
-      <min value="0" />
+      <min value="1" />
       <max value="1" />
       <base>
         <path value="Extension.value[x]" />
@@ -181,8 +190,7 @@
         <max value="1" />
       </base>
       <type>
-        <code value="Reference" />
-        <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1" />
+        <code value="boolean" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -205,19 +213,21 @@
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <short value="An associated encounter reference" />
-      <definition value="An associated encounter reference." />
+      <short value="Was a parent present at the Immunization" />
+      <definition value="Was a parent present at the Immunization." />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://hl7.org/fhir/StructureDefinition/encounter-associatedEncounter" />
+      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ParentPresent-1" />
     </element>
-    <element id="Extension.value[x]:valueReference">
-      <path value="Extension.valueReference" />
-      <sliceName value="valueReference" />
+    <element id="Extension.valueBoolean:valueBoolean">
+      <path value="Extension.valueBoolean" />
+      <sliceName value="valueBoolean" />
+      <short value="Was a parent present at the Immunization" />
+      <definition value="Was a parent present at the Immunization." />
+      <min value="1" />
       <type>
-        <code value="Reference" />
-        <targetProfile value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1" />
+        <code value="boolean" />
       </type>
     </element>
   </differential>
