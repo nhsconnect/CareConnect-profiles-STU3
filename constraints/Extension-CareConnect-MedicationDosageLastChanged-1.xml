@@ -1,29 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-08-25T15:21:16.746+01:00" />
+    <lastUpdated value="2019-11-27T14:46:02.424+00:00" />
   </meta>
-  <url value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProbabilityOfRecurrence-1" />
-  <version value="0.0.1" />
-  <name value="Extension-CareConnect-ProbabilityOfRecurrence-1" />
+  <url value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationDosageLastChanged-1" />
+  <version value="1.0.0" />
+  <name value="Extension-CareConnect-MedicationDosageLastChanged-1" />
   <status value="draft" />
-  <date value="2017-07-13T10:47:04.75919+01:00" />
+  <date value="2019-11-27" />
   <publisher value="HL7 UK" />
-  <description value="This Extension resource is constrained to support representation of the probability of the reaction (allergic, adverse, intolerant) occurring." />
-  <copyright value="Copyright © 2016 HL7 UK&#xD;&#xA;&#xD;&#xA;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at&#xD;&#xA;&#xD;&#xA;http://www.apache.org/licenses/LICENSE-2.0&#xD;&#xA;&#xD;&#xA;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&#xD;&#xA;&#xD;&#xA;HL7® FHIR® standard Copyright © 2011+ HL7&#xD;&#xA;&#xD;&#xA;The HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at&#xD;&#xA;&#xD;&#xA;https://www.hl7.org/fhir/license.html" />
+  <contact>
+    <name value="INTEROPen" />
+    <telecom>
+      <system value="email" />
+      <value value="admin@interopen.org" />
+      <use value="work" />
+    </telecom>
+  </contact>
+  <description value="Indicates the date when the dosage instructions were last changed." />
+  <purpose value="CURATED BY INTEROPen see: http://www.interopen.org/careconnect-curation-methodology/" />
+  <copyright value="Copyright © 2019 HL7 UK&#xD;&#xA;&#xD;&#xA;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at&#xD;&#xA;&#xD;&#xA;http://www.apache.org/licenses/LICENSE-2.0&#xD;&#xA;&#xD;&#xA;Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.&#xD;&#xA;&#xD;&#xA;HL7® FHIR® standard Copyright © 2011+ HL7&#xD;&#xA;&#xD;&#xA;The HL7® FHIR® standard is used under the FHIR license. You may obtain a copy of the FHIR license at&#xD;&#xA;&#xD;&#xA;https://www.hl7.org/fhir/license.html" />
   <fhirVersion value="3.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <contextType value="resource" />
-  <context value="AllergyIntolerance" />
+  <context value="MedicationStatement" />
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <snapshot>
     <element id="Extension">
       <path value="Extension" />
-      <short value="The probability of the reaction (allergic, adverse, intolerant) occurring" />
-      <definition value="The probability of the reaction (allergic, adverse, intolerant) occurring." />
+      <short value="The date when the dosage instructions were last changed" />
+      <definition value="Only populate where the dosage instructions have been changed during the lifetime of the Medication/Medical Device plan.&#xD;&#xA;Set to the date when the dosage instructions were last changed." />
       <min value="0" />
       <max value="*" />
       <base>
@@ -149,7 +158,7 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProbabilityOfRecurrence-1" />
+      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationDosageLastChanged-1" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -167,11 +176,11 @@
         <map value="N/A" />
       </mapping>
     </element>
-    <element id="Extension.value[x]:valueString">
-      <path value="Extension.valueString" />
-      <sliceName value="valueString" />
-      <short value="The probability of the reaction (allergic, adverse, intolerant) occurring" />
-      <definition value="The probability of the reaction (allergic, adverse, intolerant) occurring." />
+    <element id="Extension.valueDateTime:valueDateTime">
+      <path value="Extension.valueDateTime" />
+      <sliceName value="valueDateTime" />
+      <short value="The date when the dosage instructions were last changed" />
+      <definition value="The date when the dosage instructions were last changed." />
       <comment value="A stream of bytes, base64 encoded" />
       <min value="0" />
       <max value="1" />
@@ -181,7 +190,7 @@
         <max value="1" />
       </base>
       <type>
-        <code value="string" />
+        <code value="dateTime" />
       </type>
       <condition value="ele-1" />
       <constraint>
@@ -204,20 +213,20 @@
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <short value="The probability of the reaction (allergic, adverse, intolerant) occurring" />
-      <definition value="The probability of the reaction (allergic, adverse, intolerant) occurring." />
+      <short value="The date when the dosage instructions were last changed" />
+      <definition value="Only populate where the dosage instructions have been changed during the lifetime of the Medication/Medical Device plan.&#xD;&#xA;Set to the date when the dosage instructions were last changed." />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProbabilityOfRecurrence-1" />
+      <fixedUri value="https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationDosageLastChanged-1" />
     </element>
-    <element id="Extension.value[x]:valueString">
-      <path value="Extension.valueString" />
-      <sliceName value="valueString" />
-      <short value="The probability of the reaction (allergic, adverse, intolerant) occurring" />
-      <definition value="The probability of the reaction (allergic, adverse, intolerant) occurring." />
+    <element id="Extension.valueDateTime:valueDateTime">
+      <path value="Extension.valueDateTime" />
+      <sliceName value="valueDateTime" />
+      <short value="The date when the dosage instructions were last changed" />
+      <definition value="The date when the dosage instructions were last changed." />
       <type>
-        <code value="string" />
+        <code value="dateTime" />
       </type>
     </element>
   </differential>
