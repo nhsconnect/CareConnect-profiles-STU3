@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <NamingSystem xmlns="http://hl7.org/fhir">
 	<name value="NHS Number"/>
 	<status value="draft"/>
@@ -16,6 +16,11 @@
 	<responsible value="NHS Digital"/>
 	<description value="NHS Number allocated to the patient."/>
 	<usage value="A unique patient identifier for everyone registered with the NHS."/>
+	<uniqueId>
+		<type value="uri"/>
+		<value value="https://fhir.hl7.org.uk/Id/nhs-number"/>
+		<preferred value="true"/>
+	</uniqueId>	
 	<uniqueId>
 		<type value="oid"/>
 		<value value="2.16.840.1.113883.2.1.4.1"/>
